@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Layer3 from "./Componens/Layers/Layer3";
+import CounterCard from "./Componens/Cards/CounterCard";
+import TodoCard from "./Componens/Cards/TodoCard";
+import RefCard from "./Componens/Cards/RefCard";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./Componens/Sections/Navabar";
+import BiryaniProvider from "./Contexts/BiryaniProvider";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route
+          path="/path1"
+          element={
+            <BiryaniProvider>
+              <CounterCard />
+            </BiryaniProvider>
+          }
+        ></Route>
+        <Route
+          path="/path2"
+          element={
+            <BiryaniProvider>
+              <TodoCard />
+            </BiryaniProvider>
+          }
+        ></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
