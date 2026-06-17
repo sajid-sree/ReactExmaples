@@ -7,25 +7,37 @@ import RefCard from "./Componens/Cards/RefCard";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Componens/Sections/Navabar";
 import BiryaniProvider from "./Contexts/BiryaniProvider";
+import AxiosCard from "./Componens/Cards/AxiosCard";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
+
         <Route
           path="/path1"
-          element={
+          element={ 
             <BiryaniProvider>
               <CounterCard />
             </BiryaniProvider>
           }
         ></Route>
+
         <Route
           path="/path2"
           element={
             <BiryaniProvider>
               <TodoCard />
+            </BiryaniProvider>
+          }
+        ></Route>
+
+        <Route
+          path="/path3"
+          element={
+            <BiryaniProvider>
+              <AxiosCard />
             </BiryaniProvider>
           }
         ></Route>

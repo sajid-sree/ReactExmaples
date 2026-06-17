@@ -5,6 +5,7 @@ function Navbar(){
         <div className="d-flex justify-content-evenly mb-4">
             <Link className="btn btn-success" to="/path1">CounteCard</Link>
             <Link className="btn btn-primary" to="/path2">TodoCard</Link>
+            <Link className="btn btn-warning" to="/path3">AxiosCard</Link>
         </div>
     )
 }
